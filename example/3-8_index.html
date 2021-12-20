@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Sample</title>
+</head>
+<body>
+<div id="app">
+    <!-- 4. 하위 컴포넌트 출력 추가-->
+    <child-component v-bind:propsdata="message"></child-component>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+    // 2. 전역 컴포넌트 생성(하위 컴포넌트)
+    Vue.component('child-component',{
+        // 3. props 생성 -> propsdata 정의
+        props : ['propsdata'],
+        template : '<p>{{ propsdata }}</p>'
+    });
+
+    // 1. 뷰 인스턴스 생성(상위 컴포넌트)
+    new Vue({
+        el: '#app',
+        data : {
+            // 5. 4번에서 propsdata=message로 바인딩
+            message: 'Hello Vue.js!, passed from Parent Component'
+        }
+    })
+</script>
+</body>
+</html>
