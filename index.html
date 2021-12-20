@@ -24,7 +24,9 @@
             },
             mounted: function() {
                 console.log("mounted");
+                this.message = 'Update Vue.js!' // 변경 감지 -> update 호출
             },
+            // 업데이트는 호출되지 않았음
             updated: function() {
                 console.log("updated");
             }
