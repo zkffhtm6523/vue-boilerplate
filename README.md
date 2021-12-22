@@ -1,4 +1,4 @@
-# vue-boilerplate
+# vue-example
 
 ## Project setup
 ```
